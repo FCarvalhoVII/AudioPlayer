@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link href="./files/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bd6b377027.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="player">
+        <div class="top">
+            <i class="fas fa-music fa-2x logo"></i>
+            <h1>Player</h1>
+        </div>
+        <hr>
+        <div class="display">
+            <div class="display-img"></div>
+            <div class="display-content">
+                <h5>Title</h5>
+                <p class="artist">Artist</p>
+                <div class="controls">
+                    <a class="buttons" id="play" onclick="player.buttonPlayPause()">
+                        <i class="far fa-play-circle fa-2x icons"></i>
+                    </a>
+                    <div class="progressbar">
+                        <span id="current-duration">00:00</span>
+                        <input id="progress" type="range" min="0" max="0" step="1"
+                            oninput="player.setProgress(value)"
+                            onchange="player.setProgress(value)">
+                        <span id="total-duration">00:00</span>
+                    </div>
+                    <div class="volume">
+                        <a class="buttons" onclick="player.buttonMute()">
+                            <i class="fas fa-volume-up icons"></i>
+                        </a>
+                        <input id="volume-bar" type="range" min="0" max="100" step="1" 
+                            oninput="player.setVolume(value)"
+                            onchange="player.setVolume(value)">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <audio></audio>
+    <script src="data.js"></script>
+    <script src="player.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
